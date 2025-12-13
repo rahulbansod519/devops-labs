@@ -7,3 +7,14 @@ This mimics real-world DevOps housekeeping tasks such as log rotation and storag
 
 ### Tech
 - Python
+
+### Docker Usage
+
+```bash
+docker build -t file-cleanup .
+docker run \
+  -e DAYS_OLD=7 \
+  -v /host/target:/data/target \
+  -v /host/archive:/data/archive \
+  file-cleanup
+

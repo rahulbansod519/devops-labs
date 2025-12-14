@@ -7,6 +7,19 @@ This mimics real-world DevOps housekeeping tasks such as log rotation and storag
 
 ### Tech
 - Python
+- Docker
+- Kubernetes
+- GitHub Actions (CI)
+
+### Key Features
+- **Automated Cleanup**: Deletes/Moves files older than a specified duration.
+- **Structured Logging**: Outputs logs in JSON format for easy ingestion by observability tools (ELK, Datadog).
+- **CI/CD Integrated**: Automated testing on every push using GitHub Actions.
+
+### Environment Variables
+- `SOURCE_DIR`: Directory to scan (default: `/data/target`)
+- `DEST_DIR`: Archive location (default: `/data/archive`)
+- `DAYS_OLD`: File age threshold in days (default: `7`)
 
 ### Docker Usage
 

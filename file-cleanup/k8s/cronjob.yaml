@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: file-cleanup-cron
+spec:
+  schedule: "0 2 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: file-cleanup
+            image: file-cleanup:latest
+            imagePullPolicy: IfNotPresent
+            env:
+            - name: DAYS_OLD
+              value: "7"
+            volumeMounts:
+            - name: data
+              mountPath: /data
+          restartPolicy: OnFailure
+          volumes:
+          - name: data
+            hostPath:
+              path: /Users/rahulbansod01/Projects/devops-labs/file-cleanup/data

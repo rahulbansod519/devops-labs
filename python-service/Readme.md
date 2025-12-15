@@ -14,3 +14,9 @@ This service is intentionally simple to focus on deployment, configuration, and 
 - Liveness and readiness probes for self-healing
 - Resource requests and limits for safe scheduling
 - Service exposure via ClusterIP
+
+### Configuration Management
+
+- Non-sensitive config via ConfigMaps
+- Secrets injected via Kubernetes Secrets
+- Application remains stateless and environment-agnostic

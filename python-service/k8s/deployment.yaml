@@ -18,6 +18,19 @@ spec:
         imagePullPolicy: Never
         ports:
         - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: MESSAGE
+          valueFrom:
+            configMapKeyRef:
+              name: python-service-config
+              key: MESSAGE
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: python-service-secret
+              key: API_KEY
 
         livenessProbe:
           httpGet:

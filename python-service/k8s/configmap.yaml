@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: python-service-config
 data:
-  MESSAGE: "Hello from ConfigMap"
+  MESSAGE: "Version 2 - Rolling update live"

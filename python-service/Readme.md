@@ -20,3 +20,10 @@ This service is intentionally simple to focus on deployment, configuration, and 
 - Non-sensitive config via ConfigMaps
 - Secrets injected via Kubernetes Secrets
 - Application remains stateless and environment-agnostic
+
+### Rolling Updates
+
+- Uses RollingUpdate strategy with zero downtime
+- maxUnavailable set to 0 to ensure availability
+- Readiness probes gate traffic during updates
+
